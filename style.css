@@ -68,7 +68,7 @@ button {
 }
 main {
     display: flex;
-    justify-content: space-between
+    gap: 30px;
 }
 
 h2 {
@@ -100,13 +100,13 @@ h2 {
 .main__section__Centro { 
     /* preguntar */
     display: flex;
+    flex-grow: 1;/* para que el contenedor se ajuste a la pantalla */
     flex-direction: column;
     justify-content: space-between;
     align-content: space-between;
     padding: 30px 60px;
     background-color: #232222;
     border-radius: 25px;
-    min-width: 79%;
 
 }
 
