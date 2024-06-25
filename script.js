@@ -22,11 +22,18 @@
 axios.get("https://leonardoapi.onrender.com/songs").then((res) => {
     //guardo la lista de canciones
     const songList = res.data.songs
-
-    
-
+    const tracklist = document.getElementById("track-list")
     //recorriendo la lista de canciones
     songList.map((song) => {
         console.log(song)
+
+        const div = document.createElement("div")
+        div.classList.add("canciones")
+        div.innerHTML = `
+            <button><img src="${song.path.front}" alt=""></button>
+            <p><b>${song.title}</b></p>
+            <p>${song.author}</p>
+        `
+        tracklist.appendChild(div)
     })
 })

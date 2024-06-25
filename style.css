@@ -16,6 +16,20 @@ body {
     overflow: hidden; con esto podemos hacer que la pantalla no tenga scr*/
 
 }
+body::-webkit-scrollbar {
+    width: 8px;
+    /* Tamaño del scroll en vertical */
+    height: 8px;
+    /* Tamaño del scroll en horizontal */
+    display: inline;
+    /* Ocultar scroll */
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+body::-webkit-scrollbar-thumb {
+    background: #72118C;
+    border-radius: 4px;
+}
 header nav {
     display: flex;
     align-items: center;
@@ -209,9 +223,10 @@ h2 {
     min-height: 30px;
     min-width: 30px;
 }
-
+h2 {
+    border-bottom: 2px solid white;
+}
 .main__section__Centro {
-    /* preguntar */
     display: flex;
     flex-grow: 1;
     /* para que el contenedor se ajuste a la pantalla */
@@ -222,9 +237,9 @@ h2 {
     border-radius: 25px;
     position: relative;
     overflow: hidden;
-
-
 }
+
+
 /* animacion */
 .main__section__Centro::before {
     content: "";
@@ -247,39 +262,44 @@ h2 {
     position: absolute;
 }
 /* distribucion de la parte central */
-.main__section__Centro__explorar div, .main__section__Centro__para-ti div, .main__section__Centro__historial__orden {
+.main__section__Centro__explorar div, .main__section__Centro__para-ti__canciones, .main__section__Centro__historial__orden {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    padding-top: 10px;
-
+    padding-top: 8px;
+    overflow: auto;
+    max-height: 178px;
 }
 
-.song {
+
+/* Tarjetas de canciones */
+.song, .canciones{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    border:2px solid #292828;
+    padding-top: 5px;
+    border-radius: 25px;
+
 }
-.song button img {
-    height: 100%;
-    width: 100%; 
+.song p:nth-child(odd), .canciones p:nth-child(odd){
+    opacity: .5;
+    font-size: 10px;
+}
+.song button img, .canciones button img{
+    height: 115px;
+    width: 170px;
     border-radius: 25px;
 }
-.song:hover {
-    filter: opacity(50%);
-    transition: ease 0.3s;
-}
-
-.main__section__Centro__para-ti {
-
-}
-/* parte inferior de la parte central de la pag */
-.main__section__Centro__explorar {
-    overflow: hidden;
+.song:hover, .canciones:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
     
 }
+
+
 .main__section__Centro__explorar div button {
     display: flex;
     align-items: center;
@@ -294,6 +314,7 @@ h2 {
     color: white;
     cursor: pointer;
 }
+
 
 /* COLORES */
 .main__section__Centro__explorar div button:nth-child(odd) {
@@ -321,6 +342,16 @@ h2 {
     transition: ease 0.3;
 }
 
+
+/* scrol interno de la parte central de la pagin */
+.main__section__Centro__historial__orden::-webkit-scrollbar, .main__section__Centro__para-ti__canciones::-webkit-scrollbar, .main__section__Centro__explorar div::-webkit-scrollbar {
+    width: 8px;
+    /* Tamaño del scroll en vertical */
+    height: 8px;
+    /* Tamaño del scroll en horizontal */
+    display: none;
+    /* Ocultar scroll */
+}
 .main__section__izquierda {
     display: flex;
     justify-content: center;
