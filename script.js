@@ -23,6 +23,8 @@ axios.get("https://leonardoapi.onrender.com/songs").then((res) => {
     //guardo la lista de canciones
     const songList = res.data.songs
 
+    
+
     //recorriendo la lista de canciones
     songList.map((song) => {
         console.log(song)
