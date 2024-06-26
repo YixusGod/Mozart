@@ -34,6 +34,28 @@ axios.get("https://leonardoapi.onrender.com/songs").then((res) => {
             <p><b>${song.title}</b></p>
             <p>${song.author}</p>
         `
+        //antes de agregar el elemento 
+        //agregarle la interactividad 
+
+        div.addEventListener('click', () => {
+            //lo que se escriba aparecera en el evento
+            document.getElementById('portada').setAttribute('src', song.path.front)
+            document.getElementById('nombre').innerHTML = song.tittle
+            document.getElementById('artista').innerHTML = song.author
+            const audio = document.getElementById('audio')
+            document.getElementById('audio').setAttribute('src', song.path.audio)
+
+            document.getElementById('duracion').innerHTML = song.duration
+
+            document.getElementById('paused').addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play()
+                }
+                else {
+                    audio.pause()
+                }
+            })
+        })
         tracklist.appendChild(div)
     })
 })

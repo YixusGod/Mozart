@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="keywords" content="Reproductor, música, audio, online, streaming, listas, gratis, compartir, amigos, mp3, descarga, facil">
-    <link rel="shortcut icon" href="/assent/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/logo.svg" type="image/x-icon">
     <title>Mozart</title>
     <link rel="stylesheet" href="style.css">
 
@@ -16,17 +16,17 @@
     <header>
         <nav>
             <div class="navbar__logo">
-                <img src="/assent/logo.svg" alt="" class="navbar__img">
+                <img src="/assets/logo.svg" alt="" class="navbar__img">
                 <H1>Mozart</H1>
             </div>
 
             <div class="navbar__busqueda">
                 <span>
-                    <button><img src="/assent/search.svg" alt=""></button>
+                    <button><img src="/assets/search.svg" alt=""></button>
                     <input type="text" name="Buscar" placeholder="buscar" id="Buscar">
                 </span>
             </div>
-            <img src="/assent/Tomatedeifinitivo.png" alt="" class="navbar__img">
+            <img src="/assets/Tomatedeifinitivo.png" alt="" class="navbar__img">
         </nav>
     </header>
     <main>
@@ -34,19 +34,19 @@
             <div class="main__section__derecha__menu">
                 <span>
                     <h3>Menu</h3>
-                    <button><img src="/assent/casa.svg" alt=""></button>
-                    <button><img src="/assent/amigo.svg" alt=""></button>
-                    <button><img src="/assent/chat.svg" alt=""></button>
-                    <button><img src="/assent/Telefono.svg" alt=""></button>
+                    <button><img src="/assets/casa.svg" alt=""></button>
+                    <button><img src="/assets/amigo.svg" alt=""></button>
+                    <button><img src="/assets/chat.svg" alt=""></button>
+                    <button><img src="/assets/Telefono.svg" alt=""></button>
                 </span>
             </div>
             <div class="main__section__derecha__setting">
                 <span>
 
                     <h3>Setting</h3>
-                    <button><img src="/assent/Engranaje.svg" alt=""></button>
-                    <button><img src="/assent/Audifonos.svg" alt=""></button>
-                    <button><img src="/assent/puerta.svg" alt=""></button>
+                    <button><img src="/assets/Engranaje.svg" alt=""></button>
+                    <button><img src="/assets/Audifonos.svg" alt=""></button>
+                    <button><img src="/assets/puerta.svg" alt=""></button>
                 </span>
 
             </div>
@@ -58,17 +58,17 @@
                     <h2>Historial</h2>
                     <div class="main__section__Centro__historial__orden"><!-- canciones del historial -->
                         <div class="song">
-                            <button><img src="/assent/cancion1.jpg" alt=""></button>
+                            <button><img src="/assets/cancion1.jpg" alt=""></button>
                             <p><b>Apricity</b></p>
                             <p>Imala Zir</p>
                         </div>
                         <div class="song">
-                            <button><img src="/assent/cancion2.jpg" alt=""></button>
+                            <button><img src="/assets/cancion2.jpg" alt=""></button>
                             <p><b>Solatium</b></p>
                             <p>Imber Sun</p>
                         </div>
                         <div class="song">
-                            <img src="/assent/Mas.svg" alt="">
+                            <img src="/assets/Mas.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -95,26 +95,26 @@
             <span>
 
                 <h3>Play list</h3>
-                <button><img src="/assent/Fav.svg" alt=""></button>
-                <button><img src="/assent/Mas.svg" alt=""></button>
+                <button><img src="/assets/Fav.svg" alt=""></button>
+                <button><img src="/assets/Mas.svg" alt=""></button>
             </span>
         </section>
     </main>
     <footer>
         <span>
             <div class="footer__derecha"> 
-                <img src="/assent/cancion3.jpg" alt="">
+                <img src="/assets/cancion3.jpg" alt="" id="portada">
                 <div>
-                  <p><b>nombre</b></p>
-                    <p>artista</p>
+                  <p><b id="nombre">nombre</b></p>
+                    <p id="artista">artista</p>
                 </div>
-                <button><img src="/assent/corazon.svg" alt=""></button>
-                <button><img src="/assent/atras.svg" alt=""></button>
-                <button><img src="/assent/play.svg" alt=""></button>
-                <button><img src="/assent/siguiente.svg" alt=""></button>
-                <button><img src="/assent/aleatorio.svg" alt=""></button>
+                <button><img src="/assets/corazon.svg" alt=""></button>
+                <button><img src="/assets/atras.svg" alt=""></button>
+                <button><img src="/assets/play.svg" alt="" id="paused"></button>
+                <button><img src="/assets/siguiente.svg" alt=""></button>
+                <button><img src="/assets/aleatorio.svg" alt=""></button>
                 <div><!-- volumen -->
-                    <img src="/assent/volumen.svg" alt="">
+                    <img src="/assets/volumen.svg" alt="">
                     <input type="range" name="volumen" id="volumen" class="volumen">
                 </div>
                 
@@ -122,11 +122,12 @@
             <div class="footer__izquierda">
              
                 <div>
-                    <p>3:22</p>
-                    <p>1:32</p>
+                    <p id="duracion">3:22</p>
+                    <!-- <p>1:32</p> -->
                 </div>
-                <input type="range" name="minutos" id="minutos" class="minutos">
+                <!-- <input type="range" name="minutos" id="minutos" class="minutos"> -->
 
+                <audio src="" controls autoplay id="audio"></audio>
             </div>
         </span>
     </footer>
