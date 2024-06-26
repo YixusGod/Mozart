@@ -443,7 +443,7 @@ footer::before {
 
 img:nth-child(1) {
     border-radius: 25px;
-
+}
 
 .footer__izquierda {
     display: flex;
@@ -455,5 +455,3 @@ img:nth-child(1) {
     display: flex;
     justify-content: space-between;
 }
-
-
