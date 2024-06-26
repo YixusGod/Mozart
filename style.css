@@ -12,6 +12,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     /* height: 100vh;
     overflow: hidden; con esto podemos hacer que la pantalla no tenga scr*/
 
@@ -34,7 +35,7 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 60px;
+    padding: 10px 60px 0 60px;
     font-size: 28px;
 }
 
@@ -72,6 +73,7 @@ header nav {
     width: 400px;
     height: 400px;
     background: conic-gradient(#0D0540, #9D21BF, #72118C, #8C0F54, #0D0540);
+
     animation: rotacion 5s linear infinite;
 }
 /* efecto de la animacion */
@@ -255,18 +257,19 @@ h2 {
     flex-grow: 1;
     width: 99.5%;
     /* justify-content: space-between; */
-    padding: 30px 60px;
+    padding: 30px 50px 20px 50px;
     border-radius: 25px;
     height: 669px;
     background-color: #232222;
     position: absolute;
+    
 }
 /* distribucion de la parte central */
 .main__section__Centro__explorar div, .main__section__Centro__para-ti__canciones, .main__section__Centro__historial__orden {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    padding-top: 8px;
+    padding: 10px;
     overflow: auto;
     max-height: 178px;
 }
@@ -279,23 +282,24 @@ h2 {
     align-items: center;
     justify-content: center;
     border:2px solid #292828;
-    padding-top: 5px;
+    padding-top: 3px;
     border-radius: 25px;
-
+    transition: all .5s ease-out;
 }
 .song p:nth-child(odd), .canciones p:nth-child(odd){
-    opacity: .5;
+    opacity: .3;
     font-size: 10px;
 }
 .song button img, .canciones button img{
-    height: 115px;
-    width: 170px;
+    height: 110px;
+    width: 160px;
     border-radius: 25px;
 }
 .song:hover, .canciones:hover{
-    transition: all .5s;
+    
     transform: rotate(-3deg) scale(1);
     box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+    background-color: #292828;
     
 }
 
@@ -304,7 +308,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 160px;
+    height: 150px;
     width: 100%;
     font-size: 16px;
     padding: 30px ;
@@ -319,27 +323,36 @@ h2 {
 /* COLORES */
 .main__section__Centro__explorar div button:nth-child(odd) {
     background-color: rgb(0, 217, 255);
+    border:2px solid rgb(0, 217, 255);
+    transition: all .5s ease-in-out;
 }
 .main__section__Centro__explorar div button:nth-child(even) {
     background-color: rgb(255, 145, 0);
+    border:2px solid rgb(255, 145, 0);
+    transition: all .5s ease-in-out;
 }
 .main__section__Centro__explorar div button:nth-child(3n) {
-    background-color: green
+    background-color: green;
+    border:2px solid green;
+    transition: all .5s ease-in-out;
 }
 .main__section__Centro__explorar div button:nth-child(odd):hover {
     border:2px solid rgb(0, 217, 255);
     background-color: transparent;
-    transition: ease 0.3s;
+    transform: rotate(-3deg) scale(1);
+    box-shadow: 0px 5px 7px rgba(0,0,0,.4);
 }
 .main__section__Centro__explorar div button:nth-child(even):hover {
     border:2px solid rgb(255, 145, 0);
     background-color: transparent;
-    transition: ease 0.3s;
+    transform: rotate(-3deg) scale(1);
+    box-shadow: 0px 5px 7px rgba(0,0,0,.4);
 }
 .main__section__Centro__explorar div button:nth-child(3n):hover {
     border:2px solid green;
     background-color: transparent;
-    transition: ease 0.3;
+    transform: rotate(-3deg) scale(1);
+    box-shadow: 0px 5px 7px rgba(0,0,0,.4);
 }
 
 
@@ -358,7 +371,7 @@ h2 {
     align-items: center;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-    height: 673px;
+    height: 674px;
     width: 194px;
     position: relative;
     overflow: hidden;
@@ -377,7 +390,7 @@ h2 {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 669px;
+    height: 670px;
     width: 190px;
     gap: 30px;
     padding: 30px 60px;
@@ -387,15 +400,60 @@ h2 {
 }
 
 footer {
-    padding-top: 10px;
-}
-footer p {
+    padding: 10px 60px;
     display: flex;
+    height: 104px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.705);
-    font-size: 100px;
-    padding: 10px;
+    border-radius: 25px;
+
+}
+/* animacion */
+footer::before {
+    content: "";
+    position: absolute;
+    height: 4000px;
+    width: 4000px;
+    background: conic-gradient(#0D0540, #9D21BF, #72118C, #8C0F54,  #0D0540);
+    animation: rotacion 5s linear infinite;
+
  }
+ footer span {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    padding: 20px 60px;
+    height: 100px;
+    width: 99.8%;
+    background-color: #232222;
+    border-radius: 25px;
+    justify-content: space-between;
+ }
+
+.footer__derecha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+img:nth-child(1) {
+    border-radius: 25px;
+
+
+.footer__izquierda {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer__izquierda div {
+    display: flex;
+    justify-content: space-between;
+}
 
 
